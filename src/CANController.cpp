@@ -141,7 +141,7 @@ int CANControllerClass::peek() {
 
 void CANControllerClass::flush() {}
 
-void CANControllerClass::onReceive(void (*callback)(int)) {
+void CANControllerClass::onReceive(std::function<void(int)> callback) {
   _onReceive = callback;
 }
 

@@ -423,7 +423,7 @@ int CANSAME5x::parsePacket() {
   return result;
 }
 
-void CANSAME5x::onReceive(void (*callback)(int)) {
+void CANSAME5x::onReceive(std::function<void(int)> callback) {
   CANControllerClass::onReceive(callback);
 
   auto irq = _idx == 0 ? CAN0_IRQn : CAN1_IRQn;

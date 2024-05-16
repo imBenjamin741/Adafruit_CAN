@@ -20,7 +20,7 @@ public:
 
   int parsePacket() final;
 
-  void onReceive(void (*callback)(int)) final;
+  void onReceive(std::function<void(int)> callback) final;
 
   using CANControllerClass::filter;
   int filter(int id, int mask) final;
